@@ -1,0 +1,58 @@
+﻿@using food_pato.Models;
+@using food_pato.Utilities;
+@model IList<Blog>
+
+<!-- Blog -->
+<section class="section-blog bg-white p-t-115 p-b-123">
+	<div class="container">
+
+
+		<div class="title-section-ourmenu t-center m-b-22">
+			<span class="tit2 t-center">
+				Latest News
+			</span>
+
+			<h3 class="tit5 t-center m-t-2">
+				The Blog
+			</h3>
+		</div>
+
+		<div class="row">
+			@foreach (var item in Model)
+			{
+				string url = Functions.TitleSlugGeneration("Blog",item.TieuDe, item.BlogID);
+				<div class="col-md-4 p-t-30">
+					<!-- Block1 -->
+					<div class="blo1">
+						<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom pos-relative">
+							<a href="/@url"><img src="@item.HinhAnh" alt="IMG-INTRO"></a>
+
+							<div class="time-blog">
+								@item.NgayDangBV
+							</div>
+						</div>
+
+						<div class="wrap-text-blo1 p-t-35">
+							<a href="/@url">
+								<h4 class="txt5 color0-hov trans-0-4 m-b-13">
+									@item.TieuDe
+								</h4>
+							</a>
+
+							<p class="m-b-20">
+								@item.TomTatBV
+							</p>
+
+							<a href="/@url" class="txt4">
+								Continue Reading
+								<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+
+				</div>
+			}
+		</div>
+
+	</div>
+</section>

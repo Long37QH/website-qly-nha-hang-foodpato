@@ -1,0 +1,64 @@
+﻿@using food_pato.Models;
+@using food_pato.Utilities;
+@model IList<OurMenu>
+<div class="col-md-4 col-lg-3">
+	<div class="sidebar2 p-t-80 p-b-80 p-l-20 p-l-0-md p-t-0-md">
+		<!-- Search -->
+		<div class="search-sidebar2 size12 bo2 pos-relative">
+			<input class="input-search-sidebar2 txt10 p-l-20 p-r-55" type="text" name="search" placeholder="Search">
+			<button class="btn-search-sidebar2 flex-c-m ti-search trans-0-4"></button>
+		</div>
+
+		<!-- Categories -->
+		<div class="categories">
+			<h4 class="txt33 bo5-b p-b-35 p-t-58">
+				Thể Loại
+			</h4>
+			@foreach (var item in Model)
+			{
+				string url = Functions.TitleSlugGeneration("OurMenu", item.TieuDe, item.OurID);
+			<ul>
+				<li class="bo5-b p-t-8 p-b-8">
+						<a href="Mon_Details-@item.OurID" class="txt27">
+						@item.TieuDe
+					</a>
+				</li>
+			</ul>
+			}
+		</div>
+
+		<!-- Most Popular -->
+		<div class="popular">
+			<h4 class="txt33 p-b-35 p-t-58">
+				Phổ Biến Nhất
+			</h4>
+			@foreach(var item in Model){
+				string url = Functions.TitleSlugGeneration("OurMenu", item.TieuDe, item.OurID);
+				<ul>
+
+					<li class="flex-w m-b-25">
+						<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
+							<a href="Mon_Details-@item.OurID">
+								<img src="@item.HinhAnh" alt="IMG-BLOG">
+							</a>
+						</div>
+
+						<div class="size28">
+							<a href="Mon_Details-@item.OurID" class="dis-block txt28 m-b-8">
+								@item.TieuDe
+							</a>
+
+							<span class="txt14">
+								@item.NgayDangBV
+							</span>
+						</div>
+					</li>
+			
+			</ul>
+			}
+		</div>
+
+
+		
+	</div>
+</div>

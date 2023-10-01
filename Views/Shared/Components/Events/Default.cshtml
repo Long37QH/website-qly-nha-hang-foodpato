@@ -1,0 +1,397 @@
+﻿@using food_pato.Models;
+@using food_pato.Utilities;
+@model IList<Events>
+
+<!-- Event -->
+<section class="section-event">
+    <div class="wrap-slick2">
+        <div class="slick2">
+            @foreach (var item in Model.Where(m => m.ThuTuBV == 1))
+            {
+                string ulr = Functions.TitleSlugGeneration("events", item.TieuDe, item.EventsID);
+                <div class="item-slick2 item1-slick2" style="background-image: url(@item.HinhAnhNen);">
+                    <div class="wrap-content-slide2 p-t-115 p-b-208">
+                        <div class="container">
+                            <!-- - -->
+                            <div class="title-event t-center m-b-52">
+                                <span class="tit2 p-l-15 p-r-15">
+                                    Upcomming
+                                </span>
+
+                                <h3 class="tit6 t-center p-l-15 p-r-15 p-t-3">
+                                    Events
+                                </h3>
+                            </div>
+
+                            <!-- Block2 -->
+                            <div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="zoomIn">
+                                <!-- Pic block2 -->
+                                <a href="@ulr" class="wrap-pic-blo2 bg1-blo2" style="background-image: url(@item.HinhAnh);">
+                                    <div class="time-event size10 txt6 effect1">
+                                        <div id="laytg" class="txt-effect1 flex-c-m t-center">
+                                            @item.ThoiGianSK
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <!-- Text block2 -->
+                                <div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
+                                    <h4 class="tit7 t-center m-b-10">
+                                        @item.TieuDe
+                                    </h4>
+
+                                    <p class="t-center">
+                                        @item.TomTatBV
+                                    </p>
+
+                                    <div class="flex-sa-m flex-w w-full m-t-40">
+                                        <div class="size11 flex-col-c-m">
+                                            <div id="day" class="dis-block t-center txt7 m-b-2">
+                                            </div>
+
+                                            <span class="dis-block t-center txt8">
+                                                Days
+                                            </span>
+                                        </div>
+
+                                        <div class="size11 flex-col-c-m">
+                                            <div id="hour" class="dis-block t-center txt7 m-b-2">
+                                            </div>
+
+                                            <span class="dis-block t-center txt8">
+                                                Hours
+                                            </span>
+                                        </div>
+
+                                        <div class="size11 flex-col-c-m">
+                                            <div id="minute" class="dis-block t-center txt7 m-b-2 ">
+                                            </div>
+
+                                            <span class="dis-block t-center txt8">
+                                                Minutes
+                                            </span>
+                                        </div>
+
+                                        <div class="size11 flex-col-c-m">
+                                            <div id="second" class="dis-block t-center txt7 m-b-2 ">
+                                            </div>
+
+                                            <span class="dis-block t-center txt8">
+                                                Seconds
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <a href="@ulr" class="txt4 m-t-40">
+                                        Đọc thêm
+                                        <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            @foreach (var item in Model.Where(m => m.ThuTuBV == 2))
+            {
+                string ulr = Functions.TitleSlugGeneration("events", item.TieuDe, item.EventsID);
+                <div class="item-slick2 item1-slick2" style="background-image: url(@item.HinhAnhNen);">
+                    <div class="wrap-content-slide2 p-t-115 p-b-208">
+                        <div class="container">
+                            <!-- - -->
+                            <div class="title-event t-center m-b-52">
+                                <span class="tit2 p-l-15 p-r-15">
+                                    Upcomming
+                                </span>
+
+                                <h3 class="tit6 t-center p-l-15 p-r-15 p-t-3">
+                                    Events
+                                </h3>
+                            </div>
+
+                            <!-- Block2 -->
+                            <div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="zoomIn">
+                                <!-- Pic block2 -->
+                                <a href="@ulr" class="wrap-pic-blo2 bg1-blo2" style="background-image: url(@item.HinhAnh);">
+                                    <div class="time-event size10 txt6 effect1">
+                                        <div id="laytg2" class="txt-effect1 flex-c-m t-center">
+                                            @item.ThoiGianSK
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <!-- Text block2 -->
+                                <div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
+                                    <h4 class="tit7 t-center m-b-10">
+                                        @item.TieuDe
+                                    </h4>
+
+                                    <p class="t-center">
+                                        @item.TomTatBV
+                                    </p>
+
+                                    <div class="flex-sa-m flex-w w-full m-t-40">
+                                        <div class="size11 flex-col-c-m">
+                                            <div id="dayss" class="dis-block t-center txt7 m-b-2">
+                                            </div>
+
+                                            <span class="dis-block t-center txt8">
+                                                Days
+                                            </span>
+                                        </div>
+
+                                        <div class="size11 flex-col-c-m">
+                                            <div id="hourss" class="dis-block t-center txt7 m-b-2">
+                                            </div>
+
+                                            <span class="dis-block t-center txt8">
+                                                Hours
+                                            </span>
+                                        </div>
+
+                                        <div class="size11 flex-col-c-m">
+                                            <div id="minutess" class="dis-block t-center txt7 m-b-2 ">
+                                            </div>
+
+                                            <span class="dis-block t-center txt8">
+                                                Minutes
+                                            </span>
+                                        </div>
+
+                                        <div class="size11 flex-col-c-m">
+                                            <div id="secondss" class="dis-block t-center txt7 m-b-2 ">
+                                            </div>
+
+                                            <span class="dis-block t-center txt8">
+                                                Seconds
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <a href="@ulr" class="txt4 m-t-40">
+                                        View Details
+                                        <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            @foreach (var item in Model.Where(m => m.ThuTuBV == 3))
+            {
+                string ulr = Functions.TitleSlugGeneration("events", item.TieuDe, item.EventsID);
+                <div class="item-slick2 item1-slick2" style="background-image: url(@item.HinhAnhNen);">
+                    <div class="wrap-content-slide2 p-t-115 p-b-208">
+                        <div class="container">
+                            <!-- - -->
+                            <div class="title-event t-center m-b-52">
+                                <span class="tit2 p-l-15 p-r-15">
+                                    Upcomming
+                                </span>
+
+                                <h3 class="tit6 t-center p-l-15 p-r-15 p-t-3">
+                                    Events
+                                </h3>
+                            </div>
+
+                            <!-- Block2 -->
+                            <div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="zoomIn">
+                                <!-- Pic block2 -->
+                                <a href="@ulr" class="wrap-pic-blo2 bg1-blo2" style="background-image: url(@item.HinhAnh);">
+                                    <div class="time-event size10 txt6 effect1">
+                                        <div id="laytg3" class="txt-effect1 flex-c-m t-center">
+                                            @item.ThoiGianSK
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <!-- Text block2 -->
+                                <div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
+                                    <h4 class="tit7 t-center m-b-10">
+                                        @item.TieuDe
+                                    </h4>
+
+                                    <p class="t-center">
+                                        @item.TomTatBV
+                                    </p>
+
+                                    <div class="flex-sa-m flex-w w-full m-t-40">
+                                        <div class="size11 flex-col-c-m">
+                                            <div id="daysss" class="dis-block t-center txt7 m-b-2">
+                                            </div>
+
+                                            <span class="dis-block t-center txt8">
+                                                Days
+                                            </span>
+                                        </div>
+
+                                        <div class="size11 flex-col-c-m">
+                                            <div id="hoursss" class="dis-block t-center txt7 m-b-2">
+                                            </div>
+
+                                            <span class="dis-block t-center txt8">
+                                                Hours
+                                            </span>
+                                        </div>
+
+                                        <div class="size11 flex-col-c-m">
+                                            <div id="minutesss" class="dis-block t-center txt7 m-b-2 ">
+                                            </div>
+
+                                            <span class="dis-block t-center txt8">
+                                                Minutes
+                                            </span>
+                                        </div>
+
+                                        <div class="size11 flex-col-c-m">
+                                            <div id="secondsss" class="dis-block t-center txt7 m-b-2 ">
+                                            </div>
+
+                                            <span class="dis-block t-center txt8">
+                                                Seconds
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <a href="@ulr" class="txt4 m-t-40">
+                                        View Details
+                                        <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+        <div class="wrap-slick2-dots"></div>
+    </div>
+</section>
+<script>
+    var date = document.getElementById('laytg').innerHTML;
+    var datearray = date.split("/");
+
+    var newdatett = datearray[1] + '/' + datearray[0] + '/' + datearray[2];
+    var tetAmLich = new Date(newdatett).getTime();
+
+
+    function newYear() {
+        /*Lấy thời gian ngày hiện tại (mily giây) */
+        var ngayHienTai = new Date().getTime();
+        var ngayHi = new Date();
+
+        /*Tính thời gian còn lại (mily giây) */
+        thoigianConLai = tetAmLich - ngayHienTai;
+
+        /*Chuyển đơn vị thời gian tương ứng sang mili giây*/
+        var giay = 1000;
+        var phut = giay * 60;
+        var gio = phut * 60;
+        var ngay = gio * 24;
+
+        /*Tìm ra thời gian theo ngày, giờ, phút giây còn lại thông qua cách chia lấy dư(%) và làm tròn số(Math.floor) trong Javascript*/
+        var d = Math.floor(thoigianConLai / (ngay));
+        var h = Math.floor((thoigianConLai % (ngay)) / (gio));
+        var m = Math.floor((thoigianConLai % (gio)) / (phut));
+        var s = Math.floor((thoigianConLai % (phut)) / (giay));
+
+        /*Hiển thị kết quả ra các thẻ Div với ID tương ứng*/
+        document.getElementById("day").innerText = d;
+        document.getElementById("hour").innerText = h;
+        document.getElementById("minute").innerText = m;
+        document.getElementById("second").innerText = s;
+    }
+
+    /*Thiết Lập hàm sẽ tự động chạy lại sau 1s*/
+    setInterval(function () {
+        newYear()
+    }, 1000)
+
+
+
+
+    var date1 = document.getElementById('laytg2').innerHTML;//Short Date
+
+    var datearray1 = date1.split("/");
+
+    var newdatett1 = datearray1[1] + '/' + datearray1[0] + '/' + datearray1[2];
+
+    /*Lấy thời gian (mily giây)*/
+    var tetAmLichs = new Date(newdatett1).getTime();
+
+    function newYear1() {
+        /*Lấy thời gian ngày hiện tại (mily giây) */
+        var ngayHienTais = new Date().getTime();
+
+        /*Tính thời gian còn lại (mily giây) */
+        thoigianConLais = tetAmLichs - ngayHienTais;
+
+        /*Chuyển đơn vị thời gian tương ứng sang mili giây*/
+        var giays = 1000;
+        var phuts = giays * 60;
+        var gios = phuts * 60;
+        var ngays = gios * 24;
+
+        /*Tìm ra thời gian theo ngày, giờ, phút giây còn lại thông qua cách chia lấy dư(%) và làm tròn số(Math.floor) trong Javascript*/
+        var ds = Math.floor(thoigianConLais / (ngays));
+        var hs = Math.floor((thoigianConLais % (ngays)) / (gios));
+        var ms = Math.floor((thoigianConLais % (gios)) / (phuts));
+        var ss = Math.floor((thoigianConLais % (phuts)) / (giays));
+
+        /*Hiển thị kết quả ra các thẻ Div với ID tương ứng*/
+        document.getElementById("dayss").innerText = ds;
+        document.getElementById("hourss").innerText = hs;
+        document.getElementById("minutess").innerText = ms;
+        document.getElementById("secondss").innerText = ss;
+    }
+
+    /*Thiết Lập hàm sẽ tự động chạy lại sau 1s*/
+    setInterval(function () {
+        newYear1()
+    }, 1000)
+
+
+    var date3 = document.getElementById('laytg3').innerHTML;//Short Date
+
+    var datearray2 = date3.split("/");
+
+    var newdatett2 = datearray2[1] + '/' + datearray2[0] + '/' + datearray2[2];
+
+    /*Lấy thời gian (mily giây)*/
+    var tetAmLichss = new Date(newdatett2).getTime();
+
+    function newYear2() {
+        /*Lấy thời gian ngày hiện tại (mily giây) */
+        var ngayHienTaiss = new Date().getTime();
+
+        /*Tính thời gian còn lại (mily giây) */
+        thoigianConLaiss = tetAmLichss - ngayHienTaiss;
+
+        /*Chuyển đơn vị thời gian tương ứng sang mili giây*/
+        var giayss = 1000;
+        var phutss = giayss * 60;
+        var gioss = phutss * 60;
+        var ngayss = gioss * 24;
+
+        /*Tìm ra thời gian theo ngày, giờ, phút giây còn lại thông qua cách chia lấy dư(%) và làm tròn số(Math.floor) trong Javascript*/
+        var dss = Math.floor(thoigianConLaiss / (ngayss));
+        var hss = Math.floor((thoigianConLaiss % (ngayss)) / (gioss));
+        var mss = Math.floor((thoigianConLaiss % (gioss)) / (phutss));
+        var sss = Math.floor((thoigianConLaiss % (phutss)) / (giayss));
+
+        /*Hiển thị kết quả ra các thẻ Div với ID tương ứng*/
+        document.getElementById("daysss").innerText = dss;
+        document.getElementById("hoursss").innerText = hss;
+        document.getElementById("minutesss").innerText = mss;
+        document.getElementById("secondsss").innerText = sss;
+    }
+
+    /*Thiết Lập hàm sẽ tự động chạy lại sau 1s*/
+    setInterval(function () {
+        newYear2()
+    }, 1000)
+</script>
+

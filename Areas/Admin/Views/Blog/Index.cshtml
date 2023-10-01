@@ -1,0 +1,65 @@
+﻿@using food_pato.Models;
+@model IList<Blog>
+@{
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h2>DANH SÁCH BÀI VIẾT</h2>
+    </div>
+
+    <p>
+        <a type="button" class="btn btn-success" asp-area="Admin" asp-controller="Blog" asp-action="Create">
+            <i class="bi bi-file-earmark-text me-1"></i>Thêm bài viết
+        </a>
+    </p>
+    <section class="section dashboard">
+        <div class="row">
+            <div class="col-12">
+                <div class="card recent-sales overflow-auto">
+                    <div class="card-body mt-4">
+                        <table class="table table-borderless datatable">
+                            <thead>
+                                <tr>
+                                    <th class="col-1 text-center">STT</th>
+                                    <th class="col-2 text-center">Tiêu Đề</th>
+                                    <th class="col-3 text-center">Tóm tắt</th>
+                                    <th class="col-2 text-center">Hình Ảnh</th>
+                                    <th class="col-2 text-center">Ngày Đăng</th>
+                                    <th class="col-1 text-center">ẩn / hiện</th>
+                                    <th class="col-1 text-center">Chức năng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                        <tr>
+                                            <th class="text-center" scope="row">@item.BlogID</th>
+                                            <td>
+                                                <a asp-area="Admin" asp-controller="Blog" asp-action="Details"
+                                            asp-route-id="@item.BlogID" class="text-primary">@item.TieuDe</a>
+                                            </td>
+                                            <td class="text-center">@item.TomTatBV</td>
+                                            <td class="text-center">@item.HinhAnh</td>
+                                            <td class="text-center">@item.NgayDangBV</td>
+                                            <td class="text-center">@item.TrangThaiHD</td>
+                                            <td class="text-center">
+
+                                               
+
+                                                <a asp-area="Admin" asp-controller="Blog" asp-action="Delete"
+                                                asp-route-id="@item.BlogID" class="btn btn-danger btn-sm"
+                                                title="Xoá thông tin bài viết"><i class="bi bi-trash"></i></a>
+
+                                            </td>
+                                        </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

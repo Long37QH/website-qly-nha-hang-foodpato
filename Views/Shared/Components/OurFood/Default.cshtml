@@ -1,0 +1,79 @@
+﻿@using food_pato.Models;
+@using food_pato.Utilities;
+@model IList<OurMenu>;
+
+<!-- Lunch -->
+@foreach (var item in Model.Where(m => m.Cap == 1))
+{
+	string url = Functions.TitleSlugGeneration("OurMenu", item.TieuDe, item.OurID);
+	<section class="section-lunch bgwhite">
+		<div class="header-lunch parallax0 parallax100" style="background-image: url(@item.HinhAnh);">
+		<div class="bg1-overlay t-center p-t-170 p-b-165">
+			<h2 class="tit4 t-center">
+					@item.TieuDe
+			</h2>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row p-t-108 p-b-70">
+			<div class="col-md-8 col-lg-6 m-l-r-auto">
+					@foreach (var mn in Model.Where(m => m.Cap == 2 && m.CapCha == item.OurID && m.ThuTuBV == 1))
+					{
+				<!-- Block3 -->
+				<div class="blo3 flex-w flex-col-l-sm m-b-30">
+					<div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
+								<a href="Mon_Details-@mn.OurID"><img src="@mn.HinhAnh" alt="IMG-MENU"></a>
+					</div>
+
+					<div class="text-blo3 size21 flex-col-l-m">
+								<a href="Mon_Details-@mn.OurID" class="txt21 m-b-3">
+							@mn.TieuDe
+						</a>
+
+						<span class="txt23">
+							@mn.TomTatBV
+						</span>
+
+						<span class="txt22 m-t-20">
+							@mn.GiaBan đ
+						</span>
+					</div>
+					
+				</div>
+				}
+			</div>
+
+			<div class="col-md-8 col-lg-6 m-l-r-auto">
+					@foreach (var mn in Model.Where(m => m.Cap == 2 && m.CapCha == item.OurID && m.ThuTuBV == 2))
+					{
+					<!-- Block3 -->
+						<div class="blo3 flex-w flex-col-l-sm m-b-30">
+							<div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
+								<a href="Mon_Details-@mn.OurID"><img src="@mn.HinhAnh" alt="IMG-MENU"></a>
+							</div>
+
+							<div class="text-blo3 size21 flex-col-l-m">
+								<a href="Mon_Details-@mn.OurID" class="txt21 m-b-3">
+									@mn.TieuDe
+								</a>
+
+								<span class="txt23">
+									@mn.TomTatBV
+								</span>
+
+								<span class="txt22 m-t-20">
+									@mn.GiaBan đ
+								</span>
+							</div>
+
+						</div>
+				}
+			</div>
+		</div>
+	</div>
+</section>
+}
+
+
+

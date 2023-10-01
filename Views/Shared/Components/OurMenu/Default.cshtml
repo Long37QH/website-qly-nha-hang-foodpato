@@ -1,0 +1,39 @@
+﻿@using food_pato.Models;
+@using food_pato.Utilities;
+@model IList<OurMenu>
+
+<!-- Our menu -->
+<section class="section-ourmenu bg2-pattern p-t-115 p-b-120">
+	<div class="container">
+		<div class="title-section-ourmenu t-center m-b-22">
+			<span class="tit2 t-center">
+				Discover
+			</span>
+
+			<h3 class="tit5 t-center m-t-2">
+				Our Menu
+			</h3>
+		</div>
+
+		<div class="row">
+			@foreach (var item in Model.Where(m => m.Cap == 1))
+			{
+				string url = Functions.TitleSlugGeneration("Ourmenu", item.TieuDe, item.OurID);
+					<div class="col-md-4 p-t-30">
+						<!-- Block1 -->
+						<div class="blo1">
+							<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom pos-relative">
+							<a href="/ourmenu-@item.OurID"><img src="@item.HinhAnh" alt="IMG-INTRO"></a>
+
+							<a href="/ourmenu-@item.OurID" class="btn2 flex-c-m txt5 ab-c-m size7">
+								@item.TieuDe
+								</a>
+							</div>
+						</div>
+
+					</div>
+			}
+		</div>
+
+	</div>
+</section>

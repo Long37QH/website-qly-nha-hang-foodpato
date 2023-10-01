@@ -1,0 +1,75 @@
+﻿@using food_pato.Models;
+@model IList<Events>
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h2>DANH SÁCH SỰ KIỆN</h2>
+    </div>
+    <p>
+    </p>
+    <section class="section dashboard">
+        <div class="row">
+            <div class="col-12">
+                <div class="card recent-sales overflow-auto">
+                    <div class="card-body mt-4">
+                        <table class="table table-borderless datatable">
+                            <thead>
+                                <tr>
+                                    <th class="col-1 text-center">STT</th>
+                                    <th class="col-2 text-center">Tên sự kiện</th>
+                                    <th class="col-3 text-center">Nội dung sự kiện</th>
+                                    @*<th class="col-2 text-center">Nội dung</th>*@
+                                    <th class="col-2 text-center">Hình ảnh</th>
+                                    <th class="col-2 text-center">Hình ảnh nền</th>
+                                    <th class="col-2 text-center">Link</th>
+                                    <th class="col-2 text-center">Thời gian SK</th>
+                                    <th class="col-2 text-center">Thứ tự</th>
+                                    <th class="col-2 text-center">Ngày đăng</th>
+                                    <th class="col-2 text-center">MenuID</th>
+                                    <th class="col-1 text-center">ẩn / hiện</th>
+                                    <th class="col-1 text-center">Chức năng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th class="text-center" scope="row">@item.EventsID</th>
+                                        <td>
+                                            <a asp-area="Admin" asp-controller="Events" asp-action="Details"
+                                           asp-route-id="@item.EventsID" class="text-primary">@item.TieuDe</a>
+                                        </td>
+                                        <td class="text-center">@item.TomTatBV</td>
+                                        @*<td class="text-center">@item.NoiDung</td>*@
+                                        <td class="text-center">@item.HinhAnh</td>
+                                        <td class="text-center">@item.HinhAnhNen</td>
+                                        <td class="text-center">@item.Link</td>
+                                        <td class="text-center">@item.ThoiGianSK</td>
+                                        <td class="text-center">@item.ThuTuBV</td>
+                                        <td class="text-center">@item.NgayDangBV</td>
+                                        <td class="text-center">@item.MenuID</td>
+                                        <td class="text-center">@item.TrangThaiHD</td>
+                                        <td class="text-center">
+
+                                            <a asp-area="Admin" asp-controller="Events" asp-action="Edit"
+                                           asp-route-id="@item.EventsID" class="btn btn-primary btn-sm"
+                                           title="Sửa nội dung bài viết"><i class="bi bi-pencil"></i></a>
+
+                                            <a asp-area="Admin" asp-controller="Events" asp-action="Delete"
+                                           asp-route-id="@item.EventsID" class="btn btn-danger btn-sm"
+                                           title="Xoá thông tin bài viết"><i class="bi bi-trash"></i></a>
+
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

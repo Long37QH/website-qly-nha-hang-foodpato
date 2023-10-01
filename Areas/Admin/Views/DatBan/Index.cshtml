@@ -1,0 +1,63 @@
+﻿@using food_pato.Models;
+@model IList<DatBan>
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h2>DANH SÁCH ĐẶT BÀN</h2>
+    </div>
+    <section class="section dashboard">
+        <div class="row">
+            <div class="col-12">
+                <div class="card recent-sales overflow-auto">
+                    <div class="card-body mt-4">
+                        <table class="table table-borderless datatable">
+                            <thead>
+                                <tr>
+                                    <th class="col-1 text-center">STT</th>
+                                    <th class="col-2 text-center">Tên khách hàng</th>
+                                    <th class="col-2 text-center">Số điện thoại</th>
+                       
+                                    <th class="col-2 text-center">Số Người</th>
+                                    <th class="col-2 text-center">Ngày đặt</th>
+                                    <th class="col-2 text-center">Thời gian</th>
+                          
+                                    <th class="col-1 text-center">Chức năng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th class="text-center" scope="row">@item.BanID</th>
+                                        <td>
+                                            <a asp-area="Admin" asp-controller="DatBan" asp-action="Details"
+                                           asp-route-id="@item.BanID" class="text-primary">@item.TenKH</a>
+                                        </td>
+                                        <td class="text-center">@item.Phone</td>
+                                      
+                                        <td class="text-center">@item.SoNguoi</td>
+                                        <td class="text-center">@item.Date</td>
+                                        <td class="text-center">@item.Time</td>
+                                        <td class="text-center">
+
+
+
+                                            <a asp-area="Admin" asp-controller="DatBan" asp-action="Delete"
+                                           asp-route-id="@item.BanID" class="btn btn-danger btn-sm"
+                                           title="Xoá thong tin dat ban"><i class="bi bi-trash"></i></a>
+
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

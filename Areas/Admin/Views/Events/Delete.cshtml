@@ -1,0 +1,29 @@
+﻿@model food_pato.Models.Events
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h2> Xác Nhận Xoá SK</h2>
+    </div>
+    <div class="from-row">
+        <div class="from-group col-md-6">
+            <label asp-for="EventsID">EventsID</label>
+            <input type="text" class="from-control mb-3" asp-for="EventsID" disabled />
+        </div>
+        <div class="from-group col-md-6">
+            <label asp-for="TieuDe">Name</label>
+            <input type="text" class="from-control mb-3" asp-for="TieuDe" disabled />
+        </div>
+    </div>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="EventsID" />
+        <a class=" btn btn-lg btn-warning p-2 mr-5" href="javascript:history.back()">
+            <i class="bi bi-arow-left-circle"></i> Quay lại
+        </a>
+        <button type="submit" class="btn btn-lg btn-danger p-2">
+            <i class="bi bi-trash-fill"></i>Xoá SK
+        </button>
+    </form>
+</main>

@@ -1,0 +1,95 @@
+﻿@using food_pato.Utilities;
+@model food_pato.Models.OurMenu
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h2>Thêm mới bài viết</h2>
+    </div>
+    <!-- Begin Form -->
+    <form asp-action="Create" method="post">
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <label asp-for="MenuID">Chọn mục</label>
+                <select asp-for="MenuID"
+                        class="form-control"
+                        asp-items="@(new SelectList(ViewBag.mkList, "Value", "Text"))">
+                </select>
+                <span asp-validation-for="MenuID" class="alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="CapCha">Danh mục món</label>
+                <select asp-for="CapCha"
+                        class="form-control"
+                        asp-items="@(new SelectList(ViewBag.mnList, "Value", "Text"))">
+                </select>
+                <span asp-validation-for="CapCha" class="alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="ThuTuBV">Vị trí</label>
+                <select asp-for="ThuTuBV" class="form-control">
+                        
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                </select>
+                <span asp-validation-for="ThuTuBV" class="alert-danger"></span>
+            </div>
+            <div class="form-group col-md-12">
+                <label asp-for="TieuDe">Tên món</label>
+                <input type="text" class="form-control mb-3" asp-for="TieuDe">
+            </div>
+            <div class="form-group col-md-12">
+                <label asp-for="TomTatBV">Mô tả món ăn</label>
+                <input type="text" class="form-control mb-3" asp-for="TomTatBV">
+            </div>
+            <div class="from-group col-md-12">
+                <label class="control-label">Hình ảnh</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-success" type="button" onclick="openDialog()">Chọn hình ảnh</button>
+                    </div>
+                    <input type="text" class="form-control" asp-for="HinhAnh" id="file_input" aria-describedby="button-addon2">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label asp-for="GiaBan">Giá bán</label>
+                <input type="text" class="form-control mb-3" asp-for="GiaBan">
+            </div>
+            <div class="form-group col-md-12">
+                <label asp-for="NoiDung">Mô tả chi tiết món ăn</label>
+                <textarea asp-for="NoiDung" class="form-control"></textarea>
+
+
+            </div>
+            <div class="form-group col-md-6 mt-3 mb-3">
+                <label>
+                    @Html.CheckBox("TrangThaiHD", true)
+                    Hiển thị
+                </label>
+            </div>
+            <div class="form-group d-none">
+                <input asp-for="NgayDangBV" class="form-control" value="@Functions.getCurrentDate()" />
+            </div>
+            
+            <div class="form-group d-none">
+                <input asp-for="Cap" class="form-control" value="2" />
+            </div>
+        </div>
+
+        <a class="btn btn-lg btn-warning p-2 mr-5" href="javascript:history.back()">
+            <i class="bi bi-arrow-left-circle"></i> Quay lại
+        </a>
+        <button type="submit" class="btn btn-lg btn-danger p-2">
+            <i class="bi bi-trash-fill"></i> Lưu lại
+        </button>
+    </form>
+    <!-- End Form -->
+</main>
+
+
+@{
+    var summerNote = new food_pato.Areas.Admin.Models.SummerNote("#NoiDung");
+    <partial name="_SummerNote" model="summerNote" />
+}

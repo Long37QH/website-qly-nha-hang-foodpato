@@ -1,0 +1,30 @@
+﻿@using food_pato.Utilities;
+@model food_pato.Models.Blog 
+
+<form method="post" asp-controller="Home" asp-action="AddComment" class="leave-comment p-t-10" href="javascript:history.back()">
+	<h4 class="txt33 p-b-14">
+		Leave a Comment
+	</h4>
+
+	<p>
+		Your email address will not be published. Required fields are marked *
+	</p>
+
+	<div class="form-group d-none">
+		<input name="BlogID" class="form-control" value=@Html.Raw(Model.BlogID) />
+	</div>
+	<textarea class="bo-rad-10 size29 bo2 txt10 p-l-20 p-t-15 m-b-10 m-t-40" name="BL" id="Comment" placeholder="Comment..."></textarea>
+
+	<div class="size30 bo2 bo-rad-10 m-t-3 m-b-20">
+		<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="Name" id="name"  placeholder="Name *">
+	</div>
+
+	<div class="size30 bo2 bo-rad-10 m-t-3 m-b-20">
+		<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="Email" id="email" placeholder="Email *">
+	</div>
+
+	<!-- Button3 -->
+	<button  type="submit" class="btn3 flex-c-m size31 txt11 trans-0-4">
+		<a >Post Comment</a>
+	</button>
+</form>

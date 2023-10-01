@@ -1,0 +1,91 @@
+﻿@model food_pato.Models.OurMenu
+@using food_pato.Utilities;
+
+
+		<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(images/bg-title-page-03.jpg);">
+			<h2 class="tit6 t-center">
+				Thưc Đơn
+			</h2>
+		</section>
+
+
+		<!-- Content page -->
+		<section>
+			<div class="bread-crumb bo5-b p-t-17 p-b-17">
+				<div class="container">
+					<a href="home" class="txt27">
+						Home
+					</a>
+
+					<span class="txt29 m-l-10 m-r-10">/</span>
+
+					<a href="ourmenu-3" class="txt27">
+						Thưc Đơn
+					</a>
+
+					<span class="txt29 m-l-10 m-r-10">/</span>
+
+					<span class="txt29">
+						
+					</span>
+				</div>
+			</div>
+
+	<div class="container">
+		<div class="row ">
+			<div class="col-md-8 col-lg-9">
+				<div class="p-t-80 p-b-124 bo5-r p-r-50 h-full p-r-0-md bo-none-md">
+					<!-- Block4 -->
+					<div class="blo4 p-b-63">
+						<!-- -bat dau  -->
+						<div class="pic-blo4 hov-img-zoom bo-rad-10 pos-relative">
+							<a href="blog-detail.html">
+								<img src="@Html.Raw(Model.HinhAnh)" alt="IMG-BLOG">
+							</a>
+
+							<div class="date-blo4 flex-col-c-m">
+								<span class="txt30 m-b-4">
+									28
+								</span>
+
+								<span class="txt31">
+									Dec, 2018
+								</span>
+							</div>
+						</div>
+
+						<!-- - -->
+						<div class="text-blo4 p-t-33">
+							<h4 class="p-b-16">
+								@Html.DisplayFor(model =>model.TieuDe)
+							</h4>
+							<div class="txt32 flex-w p-b-24">
+								<span>
+									@Html.Raw(Model.NgayDangBV)
+									<span class="m-r-6 m-l-4">|</span>
+								</span>
+
+								<span>
+									Cooking, Food
+									<span class="m-r-6 m-l-4">|</span>
+								</span>
+								
+							</div>
+							<p>
+								@Html.Raw(Model.NoiDung)
+							</p>
+						</div>
+						<div>
+							<h6 class="text-blo4 p-t-33">
+								Giá:
+								@Html.Raw(Model.GiaBan)  VNĐ
+							</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+
+					@await Component.InvokeAsync("RecentMon")
+				</div>
+			</div>
+		</section>
